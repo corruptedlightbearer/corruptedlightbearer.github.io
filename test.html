@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Protected Page</title>
+</head>
+<body>
+    <h1>Enter Access Code</h1>
+    <form id="accessForm">
+        <input type="password" id="code" maxlength="4" placeholder="Enter 4-digit code">
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.getElementById('accessForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const code = document.getElementById('code').value;
+            if (code === '1234') { // Replace '1234' with your desired code
+                window.location.href = 'protected.html';
+            } else {
+                alert('Incorrect code. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
